@@ -8,6 +8,6 @@ node {
 		checkout()
 	}
 	stage('access aws'){
-	sh "sshpass -p rootme ssh vikas@54.242.27.4 touch demo1doom.txt"
+	sh "sshpass -p rootme ssh vikas@54.242.27.4 touch demo1dhom.txt"
 	}
 }
