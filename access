@@ -19,6 +19,12 @@ try{
 	sh "sudo touch /home/ec2-user/file3.txt"
 	}
 }
+	stage('display folder path'){
+	sh "echo this is directory path ${env.WORKSPACE}"
+	}
+	stage('changing the status'){
+	currentBuild.displayName="${env.BUILD_NUMBER}#"+currentBuild.fullProjectName
+	}
 }
 catch(e){
 currentBuild.result='WARM'
