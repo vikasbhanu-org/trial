@@ -8,6 +8,6 @@ node{
 		checkout()
 }
 		stage('making a file'){
-    sh "sshpass -p rootme sudo touch /home/ec2-user/demo"
+    sh "echo 'rootme' | sudo -S touch /home/ec2-user/demo"
 }
 }
