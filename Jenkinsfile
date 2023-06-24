@@ -8,6 +8,8 @@ node{
 		checkout()
 }
 		stage('making a file'){
-		sh "sudo touch /home/ec2-user/demo"
+			withCredentials([string(credentialsId: 'jenkins-id', variable: '')]) {
+    sh "sudo touch /home/ec2-user/demo"
+}
 }
 }
