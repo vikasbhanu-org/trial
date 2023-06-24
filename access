@@ -10,10 +10,10 @@ node{
 	stage('making a file using case'){
 	parameters {
   choice choices: ['1', '2', '3'], name: 'select_no'
-  if("${selection_number}" == "1"){
+  if(env.selection_number == "1"){
 	sh "sudo touch /home/ec2-user/file1.txt"
 	}
-	else if("${selection_number}" == "2"){
+	else if(env.selection_number == "2"){
 	sh "sudo touch /home/ec2-user/file2.txt"
 	}
 	else {
