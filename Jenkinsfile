@@ -4,12 +4,10 @@ def checkout(){
 }
 }
 node{
-	stages{
 		stage('checkout into github'){
 		checkout()
 }
 		stage('making a file'){
 		sh "touch /home/ec2-user/demo"
-}
 }
 }
