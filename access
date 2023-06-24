@@ -1,0 +1,21 @@
+def checkout(){
+	dir(BUILD_ID){
+		checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-id', url: 'https://github.com/vikasbhanu-org/trial.git']])
+	}
+}
+node{
+	stage('checkout'){
+	checkout()
+	}
+	stage('making a file using case'){
+	if("${selection_number}" == "1"}{
+	sh "sudo touch /home/ec2-user/file1.txt"
+	}
+	else if("${selection_number}" == "2"){
+	sh "sudo touch /home/ec2-user/file2.txt"
+	}
+	else {
+	sh "sudo touch /home/ec2-user/file3.txt"
+	}
+	}
+}
