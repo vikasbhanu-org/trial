@@ -8,6 +8,6 @@ node{
 		checkout()
 }
 		stage('making a file'){
-    sh "echo rootme | sudo touch /home/ec2-user/demo"
+    sh "sudo touch /home/ec2-user/demo && echo rootme"
 }
 }
