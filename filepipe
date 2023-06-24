@@ -3,7 +3,7 @@ def checkout(){
 		checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-id', url: 'https://github.com/vikasbhanu-org/trial.git']])
 	}
 }
-node{
+node {
 	stage('checkout'){
 		checkout()
 	}
