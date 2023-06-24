@@ -7,9 +7,8 @@ node{
 	stage('checkout'){
 	checkout()
 	}
+try{
 	stage('making a file using case'){
-	parameters {
-  choice choices: ['1', '2', '3'], name: 'select_no'
   if(env.selection_number == "1"){
 	sh "sudo touch /home/ec2-user/file1.txt"
 	}
@@ -20,8 +19,9 @@ node{
 	sh "sudo touch /home/ec2-user/file3.txt"
 	}
 }
-
-	}
+}
+catch(e){
+currentBuild.result='WARM'
 }
 
-
+	}
