@@ -8,8 +8,9 @@ node{
 		checkout()
 }
 		stage('making a file'){
-			withCredentials([string(credentialsId: 'jenkins-id', variable: '')]) {
+			withCredentials([usernameColonPassword(credentialsId: 'jenkins-i', variable: 'jenkins')]) {
     sh "sudo touch /home/ec2-user/demo"
 }
+    
 }
 }
