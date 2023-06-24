@@ -8,7 +8,7 @@ node{
 	checkout()
 	}
 	stage('making a file using case'){
-	if("${selection_number}" == "1"}{
+	if("${selection_number}" == "1"){
 	sh "sudo touch /home/ec2-user/file1.txt"
 	}
 	else if("${selection_number}" == "2"){
