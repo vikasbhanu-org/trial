@@ -1,0 +1,13 @@
+def checkout(){
+	dir(BUILD_ID){
+		checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-id', url: 'https://github.com/vikasbhanu-org/trial.git']])
+	}
+}
+node{
+	stage('checkout'){
+		checkout()
+	}
+	stage('access aws'){
+	sh "ssh root@54.242.27.4 touch file.txt"
+	}
+}
