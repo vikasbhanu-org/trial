@@ -8,6 +8,6 @@ node {
 		checkout()
 	}
 	stage('access aws'){
-	sh "ssh root@54.242.27.4 touch file1.txt"
+	sh "ssh root@54.242.27.4 touch demo.txt"
 	}
 }
